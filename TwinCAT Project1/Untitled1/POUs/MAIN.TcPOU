@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{986124ed-37a5-4a56-aa31-83e9b9a81d09}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	fbAlarm : FB_TcAlarm;
+	fbMessage : FB_TcMessage;
+	bInit : BOOL := TRUE;
+	
+	bRaiseAlarm: BOOL;
+	bAlarmClear: BOOL;
+	bAlarmConfirm: BOOL;
+	bSendMessage: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF binit THEN 
+	binit := FALSE;
+	fbAlarm.CreateEx(stEventEntry := TC_Events.SampleEventClass.ToBeAlarm,1,0);
+	fbMessage.CreateEx(stEventEntry := TC_EVENTS.SampleEventClass.ToBeMessage,0);
+END_IF
+
+IF bRaiseAlarm THEN 
+	bRaiseAlarm := FALSE;
+	fbAlarm.Raise(0);
+END_IF
+
+IF bAlarmClear THEN 
+	bAlarmClear := FALSE;
+	fbAlarm.Clear(nTimeStamp := 0, bResetConfirmation := TRUE);
+END_IF
+
+IF bAlarmConfirm THEN 
+	bAlarmConfirm := FALSE;
+	fbAlarm.Confirm(0);
+END_IF
+
+IF bSendMessage THEN 
+	bSendMessage := FALSE;
+	fbMessage.Send(0);
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

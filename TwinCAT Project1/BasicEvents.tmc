@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<TcModuleClass>
+	<Translations>
+		<Text TxtId="SampleEventClass_DisplayText"/>
+		<Text TxtId="ToBeMessage_DisplayText"/>
+		<Text TxtId="ToBeAlarm_DisplayText"/>
+	</Translations>
+	<DataTypes>
+		<DataType>
+			<Name GUID="{B7B27E72-E6C2-46C8-BA75-432CB61AADA1}">SampleEventClass</Name>
+			<DisplayName TxtId=""><![CDATA[SampleEventClass_DisplayText]]></DisplayName>
+			<EventId>
+				<Name Id="1">ToBeMessage</Name>
+				<DisplayName TxtId=""><![CDATA[ToBeMessage_DisplayText]]></DisplayName>
+				<Severity>Info</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="2">ToBeAlarm</Name>
+				<DisplayName TxtId=""><![CDATA[ToBeAlarm_DisplayText]]></DisplayName>
+				<Severity>Error</Severity>
+			</EventId>
+			<Hides>
+				<Hide GUID="{306A7FFF-F982-4D2C-906A-A364EF2C4DBA}"/>
+				<Hide GUID="{56CE4E18-913E-4F7A-920C-FA9ECA8F93A9}"/>
+				<Hide GUID="{C1FCE3B9-0D84-4A6A-89F2-3EAD9B421511}"/>
+			</Hides>
+		</DataType>
+	</DataTypes>
+</TcModuleClass>

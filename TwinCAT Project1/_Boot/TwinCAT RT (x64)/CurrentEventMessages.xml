@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<TcEventSources Version="2">
+	<Source>
+		<GUID>{B7B27E72-E6C2-46C8-BA75-432CB61AADA1}</GUID>
+		<Name LcId="1033">SampleEventClass_DisplayText</Name>
+		<Event>
+			<Id>1</Id>
+			<Message LcId="1033">ToBeMessage_DisplayText</Message>
+		</Event>
+		<Event>
+			<Id>2</Id>
+			<Message LcId="1033">ToBeAlarm_DisplayText</Message>
+		</Event>
+	</Source>
+</TcEventSources>
